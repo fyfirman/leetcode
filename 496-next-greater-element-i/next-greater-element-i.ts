@@ -1,5 +1,8 @@
 /**
     key idea: decreasing monotonic stack and find in another array \U0001f914
+
+    another approach: why just bruteforce the solution. pick the index every number in nums1 then find the next greater value 
+                      with bruteforcing (loop)
  */
 
 function nextGreaterElement(nums1: number[], nums2: number[]): number[] {
