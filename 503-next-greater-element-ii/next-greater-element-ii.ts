@@ -1,3 +1,7 @@
+/**
+ * Key idea: decreasing monotonic stack, but start from the max index to the left 
+ */
+
 function nextGreaterElements(nums: number[]): number[] {
     const max = Math.max(...nums);
     const maxIndex = nums.indexOf(max);
