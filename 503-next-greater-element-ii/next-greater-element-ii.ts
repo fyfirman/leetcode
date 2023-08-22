@@ -1,5 +1,8 @@
 /**
- * Key idea: decreasing monotonic stack, but start from the max index to the left 
+ * Key idea: decreasing monotonic stack, but start from the max index to the left
+ * 
+ * Another idea to achieve circular loop is having double loop (https://www.youtube.com/watch?v=ARkl69eBzhY)
+ * 
  */
 
 function nextGreaterElements(nums: number[]): number[] {
