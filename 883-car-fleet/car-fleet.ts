@@ -61,6 +61,7 @@ interface Car {
  * secondCar.position > firstCar.position
  */
 function findBumpedAt(firstCar: Car, secondCar: Car): number {
+    // Time when collided
     let i = (secondCar.position - firstCar.position) / (firstCar.speed - secondCar.speed);
     
     return secondCar.position + (i * secondCar.speed)
