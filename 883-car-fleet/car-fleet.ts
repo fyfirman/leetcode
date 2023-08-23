@@ -74,48 +74,25 @@ function carFleet(target: number, position: number[], speed: number[]): number {
     });
 
     const sorted = cars.sort((a, b) => a.position - b.position);
-    console.log(sorted)
-    const stack: (Car & {index: number})[] = [];
+
+    const stack: Car[] = [];
 
     for(let i = 0; i < sorted.length; i++){
         const current = sorted[i];
         if(stack.length === 0){
-            stack.push({...current, index: i});
+            stack.push(current);
             continue;
         }
         while(stack.length !== 0 && current.speed < stack[stack.length - 1].speed){
             const bumpedAt = findBumpedAt(stack[stack.length - 1], current);
             if(bumpedAt <= target){
-                // fleet
-                console.log(`Car ${stack[stack.length - 1].index} and car ${i} bumped at ${bumpedAt}. POP!`)
                 stack.pop();
                 continue;
             }
-            console.log(`Car ${stack[stack.length - 1].index} and car ${i} bumped at ${bumpedAt}`)
             break;
         }
-        stack.push({...current, index: i});
+        stack.push(current);
     }
     console.log(stack)
     return stack.length;
 };
-
-/**
-
-[
-0  { position: 1, speed: 8 }, x
-1  { position: 2, speed: 9 }, x
-2  { position: 3, speed: 4 }, x
-3  { position: 5, speed: 2 }, x
-4  { position: 6, speed: 5 }, y
-5  { position: 8, speed: 7 }, z
-6  { position: 14, speed: 10 }, a
-7  { position: 15, speed: 5 }, a
-8  { position: 16, speed: 7 }, b
-9  { position: 17, speed: 4 }, b
-10  { position: 18, speed: 10 }, c
-11  { position: 19, speed: 3 }, c
-12  { position: 20, speed: 10 } d
-]
-
- */
