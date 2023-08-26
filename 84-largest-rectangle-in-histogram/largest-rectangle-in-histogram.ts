@@ -1,3 +1,11 @@
+/**
+
+key idea: maintain increasing monolytic stack and index. 
+
+\U0001f972 my real submision is bad. this code is from https://www.youtube.com/watch?v=zx5Sw9130L0
+
+ */
+
 interface Stack {
     height: number;
     index: number;
