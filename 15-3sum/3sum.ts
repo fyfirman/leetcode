@@ -1,8 +1,11 @@
+/**
+    key idea: sorted two sums with modification to gain uniqueness
+ */
+
 function threeSum(nums: number[]): number[][] {
     nums = nums.sort((a,b) => a-b);
     const results = [];
 
-    console.log(nums);
     for(let i=0; i<nums.length; i++){
         if(i > 0 && nums[i-1] === nums[i]){
             continue;
