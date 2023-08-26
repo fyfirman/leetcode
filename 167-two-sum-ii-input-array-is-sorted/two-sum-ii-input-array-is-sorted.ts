@@ -1,14 +1,6 @@
 /**
-
-greedy solution 
-[2,7,11,15]
- ^ ^
-     ^   ^ 
-
-
+    key idea: remember two pointer is left right
  */
-
-
 function twoSum(nums: number[], target: number): number[] {
     let left = 0;
     let right = nums.length - 1;
