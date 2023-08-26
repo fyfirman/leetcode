@@ -15,6 +15,12 @@
 //     return max;
 // };
 
+
+/**
+    key idea: two pointer
+
+    time complexity: O(n)
+ */
 function maxArea(height: number[]): number {
     let max = 0;
     let left = 0;
@@ -25,14 +31,8 @@ function maxArea(height: number[]): number {
 
         if(height[left] <= height[right]){
             left++;
-            while(height[left] < height[left-1] && left < right){
-                left++;
-            }
         } else {
             right--;
-            while(height[right] < height[right+1] && left < right){
-                right--;
-            }
         }
     }
 
