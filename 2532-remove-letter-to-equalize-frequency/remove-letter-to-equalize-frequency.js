@@ -1,4 +1,6 @@
 /**
+    key idea: brute force
+ 
  * @param {string} word
  * @return {boolean}
  */
@@ -21,7 +23,6 @@ var equalFrequency = function(word) {
         }
         uniqueCount[c] += 1;
     });
-    console.log(uniqueCount)
 
     if(Object.keys(uniqueCount).length > 2){
         return false;
