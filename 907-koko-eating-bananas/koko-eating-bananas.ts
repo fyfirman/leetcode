@@ -1,4 +1,6 @@
 /**
+  Key idea: bruteforce + binary search for optimization
+
     piles = [3,6,7,11], h = 8           total = Math.round(27 / 8) = 4
             11 + 7 + 6 = 24
 
