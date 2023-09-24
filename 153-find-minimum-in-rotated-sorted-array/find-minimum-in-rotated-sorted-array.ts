@@ -1,24 +1,5 @@
 /**
-
-  [3,4,5,1,2]
-  l    m    r
-          l(m) r
-
-  # rotated
-
-  l > r
-
-  l = m + 1
-
-  1,2
-
-  l 
-
-  [4,5,6,7,0,1,2]
-  l      m     r
-
-
-
+  key idea: different logic to put the num
  */
 
 function findMin(nums: number[]): number {
@@ -29,7 +10,6 @@ function findMin(nums: number[]): number {
   while(left<=right){
     const mid = Math.floor((left+right)/2);
 
-    console.log(result, nums[left], nums[mid], nums[right])
     result = Math.min(result, nums[left], nums[mid], nums[right])
   
     if(nums[left] < nums[mid]){
