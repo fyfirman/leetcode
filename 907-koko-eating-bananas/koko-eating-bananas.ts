@@ -39,8 +39,6 @@ function minEatingSpeed(piles: number[], h: number): number {
         left = mid + 1;
       } else {
         right = mid - 1;
-      }
-      if(totalHours <= h){
         result = Math.min(result, mid);
       }
     }
