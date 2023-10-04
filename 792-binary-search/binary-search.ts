@@ -33,10 +33,10 @@ function search(nums: number[], target: number): number {
     while(left < right){    
         const mid = Math.floor((left + right) / 2);
 
-        if(nums[mid] < target){
-            left = mid + 1;
-        } else {
+        if(nums[mid] >= target){
             right = mid;
+        } else {
+            left = mid + 1;
         }
     }
 
@@ -48,7 +48,7 @@ function search(nums: number[], target: number): number {
 };
 
 /**
-  3. find lower bound
+  3. find lower bound -- not working for binary search
  */
 
 // function search(nums: number[], target: number): number {
@@ -57,12 +57,14 @@ function search(nums: number[], target: number): number {
 //     while(left < right){    
 //         const mid = Math.floor((left + right) / 2);
 
-//         if(nums[mid] >= target){
-//             right = mid;
+//         if(nums[mid] < target){
+//             left = mid;
 //         } else {
-//             left = mid + 1;
+//             right = mid - 1;
 //         }
 //     }
+
+//     console.log(left)
 
 //     if(nums[left] !== target){
 //       return -1;
